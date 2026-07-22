@@ -9,7 +9,7 @@ class StudentManager:
             if s.student_id == student.student_id:
                 raise ValueError("Student ID already exists!")
 
-            self.students.append(student)
+        self.students.append(student)
              
     def calculate_average_gpa(self):
 
