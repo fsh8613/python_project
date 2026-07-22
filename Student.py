@@ -15,5 +15,20 @@ class Student:
            self.grades[course] = grade
            
     def calculate_gpa(self):
-        return sum(self.grades.values())/len(self.grades)
+
+     if len(self.grades) == 0:
+        return 0, "No grades"
+
+     gpa = sum(self.grades.values()) / len(self.grades)
+
+     if 18 <= gpa <= 20:
+        level = "Excellent"
+
+     elif 13 <= gpa < 18:
+        level = "Average"
+
+     else:
+        level = "Weak"
+
+     return gpa, level
         
