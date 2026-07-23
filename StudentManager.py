@@ -60,3 +60,12 @@ class StudentManager:
         print(f"Student {student.name} removed successfully")
       else:
         raise ValueError("Student not found")
+    
+    def failed_students(self):
+     failed = []
+
+     for student in self.students:
+        if student.calculate_gpa() < 13:
+            failed.append(student)
+
+     return failed
