@@ -31,4 +31,13 @@ class Student:
         level = "Weak"
 
      return gpa, level
-        
+   
+    def edit_grade(self, course, grade):
+
+     if not 0 <= grade <= 20:
+        raise ValueError("Grade must be between 0 and 20")
+
+     if course not in self.grades:
+        raise ValueError("Course not found")
+
+     self.grades[course] = grade
