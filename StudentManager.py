@@ -45,3 +45,18 @@ class StudentManager:
             return 0
 
         return total / count
+    
+    def find_student(self, student_id):
+     for student in self.students:
+        if student.student_id == student_id:
+            return student
+
+     return None
+    def remove_student(self, student_id):
+      student = self.find_student(student_id)
+
+      if student:
+        self.students.remove(student)
+        print(f"Student {student.name} removed successfully")
+      else:
+        raise ValueError("Student not found")
