@@ -69,3 +69,34 @@ class StudentManager:
             failed.append(student)
 
      return failed
+ 
+    def best_students(self):
+
+     sorted_students = sorted(
+        self.students,
+        key=lambda student: student.calculate_gpa(),
+        reverse=True
+    )
+
+     result = []
+
+     if len(sorted_students) == 0:
+        return result
+
+     rank = 1
+     last_gpa = sorted_students[0].calculate_gpa()
+
+     for student in sorted_students:
+
+        if student.calculate_gpa() != last_gpa:
+            rank += 1
+            last_gpa = student.calculate_gpa()
+
+        if rank > 3:
+            break
+
+        result.append(
+            f"{rank}. {student.name} - GPA: {student.calculate_gpa():.2f}"
+        )
+
+     return result
