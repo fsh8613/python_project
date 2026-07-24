@@ -1,3 +1,4 @@
+import matplotlib.pyplot as plt
 import StudentManager
 class Student:
 
@@ -37,3 +38,18 @@ class Student:
         raise ValueError("Course not found")
 
      self.grades[course] = grade
+    
+    def show_grades_chart(self):
+
+     courses = list(self.grades.keys())
+     grades = list(self.grades.values())
+
+     plt.bar(courses, grades)
+
+     plt.title(self.name + "'s Grades")
+     plt.xlabel("Courses")
+     plt.ylabel("Grade")
+
+     plt.ylim(0, 20)
+
+     plt.show()
