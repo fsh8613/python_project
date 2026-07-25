@@ -40,11 +40,11 @@ class StudentManager:
             total += student.grades[course]
             count += 1
 
-        if count == 0:
+      if count == 0:
             print("this course is not exist!")
             return 0
 
-        return total / count
+      return total / count
     
     def find_student(self, student_id):
      for student in self.students:

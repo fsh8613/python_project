@@ -1,9 +1,12 @@
-import StudentManager
-class Teacher:
+
+class Admin:
 
     def __init__(self, password , name ):
-        self.password = password
+        self._password = password 
         self.name = name
+        
+    def login(self, password):
+      return self._password == password
     
     def edit_grade(self, manager, student_id, course, grade):
 
