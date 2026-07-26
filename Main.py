@@ -190,7 +190,7 @@ while True:
 
     #Exit
 
-    elif choice == "4":
+    elif choice == "5":
 
         print("Goodbye!")
         break
